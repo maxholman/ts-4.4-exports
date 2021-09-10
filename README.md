@@ -66,24 +66,3 @@ Output from Terminal 2 is now:
 ✔️ Saw named export `wave`
 ```
 
-
-### Step 5
-
-a. Change the `importHelpers` setting in `some-lib` back to `false`
-
-b. In terminal 1:
-
-```shell
-$ yarn tsc
-```
-
-c. In terminal 2:
-
-```shell
-$ node ./index.js
-```
-
-Output from Terminal 2 is now:
-```
-✔️ Saw named export `wave`
-```
