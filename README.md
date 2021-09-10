@@ -52,7 +52,7 @@ Install Typescript 4.3 instead and recompile
 Terminal 1:
 
 ```shell
-$ yarn install typescript@4.3
+$ yarn add typescript@4.3
 $ yarn tsc
 ```
 
