@@ -2,7 +2,7 @@
 
 ### Step 1
 
-In terminal 1, link the module just so it's easy to test it in isolation
+a. In terminal 1, link the module just so it's easy to test it in isolation
 ```sh
 $ cd ./some-lib
 $ yarn link 
@@ -10,13 +10,12 @@ $ yarn link
 
 ### Step 2
 
-In terminal 2, link the lib and run the consumer
+a. In terminal 2, link the lib and run the consumer
 ```shell
 $ cd ./some-consumer
 $ yarn link 'some-lib'
 $ node ./index.js
 ```
-
 Expected output is:
 
 ```
@@ -25,16 +24,16 @@ Expected output is:
 
 ### Step 3
 
-Change the `importHelpers` setting in `some-lib` to `true`
+a. Change the `importHelpers` setting in `some-lib` to `true`
 
-Terminal 1, install deps and recompile the lib
+b. In terminal 1, install deps and recompile the lib
 
 ```shell
 $ yarn install
 $ yarn tsc
 ```
 
-Terminal 2, run the consumer again
+c. In terminal 2, run the consumer again
 
 ```shell
 $ node ./index.js
@@ -45,18 +44,40 @@ Output from Terminal 2 is now:
 ❌ Named export missing
 ```
 
-### Step 3
+### Step 4
 
-Install Typescript 4.3 instead and recompile
+a. Install Typescript 4.3 instead and recompile
 
-Terminal 1:
+b. In terminal 1:
 
 ```shell
 $ yarn add typescript@4.3
 $ yarn tsc
 ```
 
-Terminal 2:
+b. In terminal 2:
+
+```shell
+$ node ./index.js
+```
+
+Output from Terminal 2 is now:
+```
+✔️ Saw named export `wave`
+```
+
+
+### Step 5
+
+a. Change the `importHelpers` setting in `some-lib` back to `false`
+
+b. In terminal 1:
+
+```shell
+$ yarn tsc
+```
+
+c. In terminal 2:
 
 ```shell
 $ node ./index.js
