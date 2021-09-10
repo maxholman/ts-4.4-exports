@@ -27,9 +27,10 @@ Expected output is:
 
 Change the `importHelpers` setting in `some-lib` to `true`
 
-Terminal 1, recompile the lib
+Terminal 1, install deps and recompile the lib
 
 ```shell
+$ yarn install
 $ yarn tsc
 ```
 
